@@ -1,0 +1,39 @@
+﻿<Window x:Class="FleetTracking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Title="Fleet Tracking"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+        <m:Map x:Name="MapPrincipal"
+               Grid.Column="0"
+               CredentialsProvider="Your code Bing Maps here"
+               Mode="AerialWithLabels"
+               Center="-22.548592,-48.568535"
+               ZoomLevel="16">
+        </m:Map>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Content="Notificações"
+                   FontSize="15"
+                   Foreground="Black"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" />
+            <Label x:Name="lblNotification"
+                   Grid.Row="1"
+                   FontSize="12"
+                   Margin="10" />
+        </Grid>
+    </Grid>
+</Window>
